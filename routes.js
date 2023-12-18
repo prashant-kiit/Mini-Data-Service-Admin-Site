@@ -78,7 +78,7 @@ router.put('/users/:userid', async (req, res) => {
   try {
     const userId = req.params.userid;
     const updateData = req.body;
-    const result = await Userschema.updateOne({ userid: userId }, { $set: updateData });
+    const result = await Userschema.updateMany({ userid: userId }, { $set: updateData });
     console.log(result);
     if (result.modifiedCount) {
       res.status(200).json({ message: 'User updated successfully' });
@@ -92,7 +92,7 @@ router.put('/users/:userid', async (req, res) => {
 
 router.delete('/users/:userid', async (req, res) => {
   try {
-    const user = await Userschema.deleteOne({ userid: req.params.userid });
+    const user = await Userschema.deleteMany({ userid: req.params.userid });
     if (user.deletedCount) {
       res.json(user);
     } else {
@@ -106,4 +106,3 @@ router.delete('/users/:userid', async (req, res) => {
 
 export default router;
 
-//deletedCount
