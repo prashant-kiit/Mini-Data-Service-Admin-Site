@@ -23,6 +23,15 @@ const CompanySchema = new Schema({
   bs: String
 });
 
+const FeedDateTime = new Schema({
+  year: Number,
+  month: Number,
+  day: Number,
+  hours: Number,
+  minutes: Number,
+  seconds: Number
+});
+
 // Define the main schema
 const UserdetailsSchema = new Schema({
   id: Number,
@@ -32,7 +41,8 @@ const UserdetailsSchema = new Schema({
   address: AddressSchema,
   phone: String,
   website: String,
-  company: CompanySchema
+  company: CompanySchema,
+  feeddatetime: FeedDateTime
 });
 
 // Create and export the model
