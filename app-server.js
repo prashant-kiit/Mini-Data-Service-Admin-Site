@@ -47,7 +47,7 @@ async function fetchStarts(fetchers, result) {
         });
 
         const data = await Promise.allSettled(fulfilledresponse.map(response => response.value.json()));
-        
+
         //console.log(data);
 
         data.forEach(obj => result.push(obj.value));
@@ -80,24 +80,31 @@ async function loadDataIntoMongoDB(results) {
     }
 }
 
-await getCacheData();
 
-for (const userid of userids) {
-    fetchers1.push(fetch(url1 + userid));
+async function appServer() {
+    await getCacheData();
+
+    for (const userid of userids) {
+        fetchers1.push(fetch(url1 + userid));
+    }
+
+    await fetchStarts(fetchers1, result1);
+
+    results.push(result1);
+
+    for (const userid of userids) {
+        fetchers2.push(fetch(url2 + userid));
+    }
+
+    await fetchStarts(fetchers2, result2);
+
+    results.push(result2);
+
+    //console.log(results);
+
+    loadDataIntoMongoDB(results);
 }
 
-await fetchStarts(fetchers1, result1);
+//appServer();
 
-results.push(result1);
-
-for (const userid of userids) {
-    fetchers2.push(fetch(url2 + userid));
-}
-
-await fetchStarts(fetchers2, result2);
-
-results.push(result2);
-
-//console.log(results);
-
-loadDataIntoMongoDB(results);
+export default appServer;
