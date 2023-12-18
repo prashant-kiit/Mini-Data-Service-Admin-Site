@@ -13,5 +13,5 @@ app.use(json());
 app.use('/user-api', router);
 
 app.listen(port, () => {
-  console.log(`Our Server is running on port ${port}`);
+  console.log(`Web Server is running on port ${port}`);
 });

@@ -59,8 +59,6 @@ async function fetchStarts(fetchers, result) {
     }
 }
 
-
-
 const uri = 'mongodb+srv://prashantsingh090798:84aZAjY7x4fRev5Y@tech-trend-datalake-clu.qpyfd55.mongodb.net/?retryWrites=true&w=majority';
 
 async function loadDataIntoMongoDB(results) {
