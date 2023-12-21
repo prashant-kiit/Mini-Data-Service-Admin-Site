@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" rel="stylesheet" href="style.css"></link>
+    <script src="./script.js"></script>
+    <title>Admin Site</title>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>
+                COMMAND
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <form autocomplete="off" onsubmit="getUsers()">
+                    <div class="form_action--button--getUsers">
+                        <input type="submit" value="GET USERS"/>
+                    </div>
+                </form>
+
+                <form autocomplete="off" onsubmit="getUserIds()">
+                    <div class="form_action--button--getUserIds">
+                        <input type="submit" value="GET USER IDS">
+                    </div>
+                </form>
+
+                <form autocomplete="off" onsubmit="getUser()">
+                    <div>
+                        <label for="userGet">UserId</label>
+                        <input type="number" name="userid" id="userIdGet">
+                    </div>
+                    <div class="form_action--button--getUserIds">
+                        <input type="submit" value="GET USER">
+                    </div>
+                </form>
+
+                <form autocomplete="off" onsubmit="post()">
+                    <div>
+                        <label for="userIdPost">UserId</label>
+                        <input type="number" name="userid" id="userIdPost">
+                        <label for="usernamePost">Username</label>
+                        <input type="text" name="username" id="usernamePost">
+                    </div>
+                    <div class="form_action--button--post">
+                        <input type="submit" value="POST USER">
+                    </div>
+                </form>
+
+                <form autocomplete="off" onsubmit="put()">
+                    <div>
+                        <label for="userIdPut">UserId</label>
+                        <input type="number" name="userid" id="userIdPut">
+                        <label for="usernamePut">Username</label>
+                        <input type="text" name="username" id="usernamePut">
+                    </div>
+                    <div class="form_action--button--put">
+                        <input type="submit" value="UPDATE USER">
+                    </div>
+                </form>
+
+                <form autocomplete="off" onsubmit="deleteById()">
+                    <div>
+                        <label for="userIdDelete">UserId</label>
+                        <input type="number" name="userid" id="userIdDelete">
+                    </div>
+                    <div class="form_action--button">
+                        <input type="submit" value="DELETE USER">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <table id="output">
+        <tr>
+            <th>
+                OUTPUT
+            </th>
+        </tr>
+        <tr>
+            <td>
+                <div id="output0"></div>
+                <table>
+                    <tr>
+                        <th >
+                            User Id
+                        </th>
+                        <th >
+                            Username
+                        </th>
+                    </tr>
+                </table>
+                <table id="output1"></table>
+                <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+                <table>
+                    <tr>
+                        <th>
+                            User Ids
+                        </th>
+                    </tr>
+                </table>
+                <table id="output2">
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
