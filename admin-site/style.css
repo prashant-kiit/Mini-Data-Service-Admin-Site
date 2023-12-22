@@ -1,14 +1,19 @@
 body{
-    background-image: url('bg.jpg');
+    /* background-image: url('bg.jpg'); */
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+    font-size: 24px; 
 }
 
 table{
     width: 80%;
     margin: 40px auto;
-    background: rgb(241, 44, 44);
+    background: rgb(153, 153, 153);
 }
 
 table.list{
@@ -17,13 +22,13 @@ table.list{
 }
 
 td{
-    border: 1px solid rgb(241, 44, 44);
+    border: 1px solid rgb(64, 64, 64);
     text-align: left;
     padding: 8px 15px;
 }
 
 tr:nth-child(even), table.list thread> tr{
-    background-color: rgb(240, 144, 144);
+    background-color: rgb(255, 255, 255);
 }
 
 input[type="text"],input[type="number"]{
@@ -36,7 +41,7 @@ input[type="text"],input[type="number"]{
 }
 
 input[type="submit"],input[type="reset"]{
-    background: #e26666;
+    background: #a3a3a3;
     padding:6px 12px;
     margin:15px 0 10px;
     display: inline-block;
@@ -48,7 +53,7 @@ input[type="submit"],input[type="reset"]{
 }
 
 input[type="submit"]:hover{
-    background: #dc5b95;
+    background: #fbc5dd;
 }
 
 input[type="reset"]:hover{
