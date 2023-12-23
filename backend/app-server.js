@@ -3,10 +3,10 @@ import { connect, disconnect } from 'mongoose';
 import Userdetails from './userdetails-schema.js';
 import Todo from './todo-schema.js';
 
-let userids = [];
+let userids = []; 
 
 async function getCacheData() {
-    console.log('caching starts');
+    console.log('cache extract starts');
     try {
         const client = createClient();
         await client.connect();
@@ -102,7 +102,6 @@ async function loadDataIntoMongoDB(results) {
         console.log('Disconnected from the database.');
     }
 }
-
 
 async function appServer() {
     await getCacheData();
